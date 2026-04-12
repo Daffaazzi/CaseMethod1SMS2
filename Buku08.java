@@ -1,17 +1,19 @@
-public class Buku08 {
-   String judul;
-   String penulis;  
-    int tahunTerbit;
+public class Buku08 { 
+   String kode; //kode unik buku contoh: B001, B002, dst
+   String judul;  //judul buku
+    int tahunTerbit; //tahun terbit buku
 
-    public Buku08(String judul, String penulis, int tahunTerbit) {
+    // constructor: dipanggil saat object buku dibuat
+    public Buku08(String kode, String judul, int tahunTerbit) {
+        this.kode = kode;
         this.judul = judul;
-        this.penulis = penulis;
         this.tahunTerbit = tahunTerbit;
     }
 
+    // menampilkan data buku ke layar
     void tampilkanInfo() {
-        System.out.println("Judul: " + judul);
-        System.out.println("Penulis: " + penulis);
-        System.out.println("Tahun Terbit: " + tahunTerbit);
+        System.out.println("| Kode: " + kode);
+        System.out.println("| Judul: " + judul);
+        System.out.println("| Tahun Terbit: " + tahunTerbit);
     }
 }
