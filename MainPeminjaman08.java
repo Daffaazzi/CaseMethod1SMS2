@@ -35,9 +35,10 @@ public class MainPeminjaman08 {
         };
 
         Buku08 [] daftarBuku08 = {
-            new Buku08("Pemrograman Java", "John Doe", 2020),
-            new Buku08("Struktur Data", "Jane Smith", 2019),
-            new Buku08("Algoritma dan Pemrograman", "Alice Johnson", 2021)
+            new Buku08("B001", "Algoritma", 2020),
+            new Buku08("B002", "Basisdata", 2019),
+            new Buku08("B003", "Pemrograman", 2021),
+            new Buku08("B004", "Fisika", 2024)
         };
 
         Peminjaman08 [] daftarPeminjaman08 = {
