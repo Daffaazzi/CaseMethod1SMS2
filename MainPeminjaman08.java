@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class MainPeminjaman08 {
 
     // insettion sort untuk urutkan peminjaman berdasarkan denda terbesar
-    static void insertionSort(Peminjaman08[] arr) {
+    static void insertionSort(Peminjaman08[] arr) { // mengurutkan data berdasarkan denda terbesar
         for (int i = 1; i < arr.length; i++) {
             Peminjaman08 key = arr[i]; // mengaambil elemen ke-i sebagai acuan
             int j = i - 1;
@@ -28,6 +28,20 @@ public class MainPeminjaman08 {
         }
         if (!ditemukan) System.out.println("Data tidak ditemukan.");
     }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// /////  
+    static void sequentialSearchUntukbukujudul(Peminjaman08[] arr, String judul) { // mencari peminjaman berdasarkan judul buku                //
+        boolean ditemukan = false;                                                                                                             //
+        for (int i = 0; i < arr.length; i++) { // mengurutkan data berdasarkan judul buku                                                     //
+            if (arr[i].buku.judul.equalsIgnoreCase(judul)) { // cek apakah judul cocok                                                       // 
+                if (!ditemukan) System.out.println("Data ditemukan:");                                                                    //  Memodifikasi UTS Menambahkan fitur perncarian transaksi prminjaman buku berdasarkan judul buku
+                arr[i].tampilkanInfo();                                                                                                     //
+                ditemukan = true; // lanjut cari jika ada lebih dari 1                                                                     // 
+            }                                                                                                                              //
+        }                                                                                                                                  //
+        if (!ditemukan) System.out.println("Data tidak ditemukan.");                                                                    //
+    }                                                                                                                                     // 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -55,6 +69,7 @@ public class MainPeminjaman08 {
             new Peminjaman08(daftarMahasiswa08[2], daftarBuku08[3], 6),  
             new Peminjaman08(daftarMahasiswa08[0], daftarBuku08[1], 4)   
         };
+        
 
         int pilih = -1;
         while (pilih != 0) {
@@ -64,6 +79,7 @@ public class MainPeminjaman08 {
             System.out.println("3. Tampilkan Peminjaman");
             System.out.println("4. Urutkan Berdasarkan Denda");
             System.out.println("5. Cari Berdasarkan NIM");
+            System.out.println("6. Cari Berdasarkan Judul Buku");
             System.out.println("0. Keluar");
             System.out.print("Pilih: ");
             pilih = sc.nextInt();
@@ -92,6 +108,14 @@ public class MainPeminjaman08 {
                     System.out.print("Masukkan NIM: ");
                     sequentialSearch(daftarPeminjaman08, sc.next());
                     break;
+                    /////////////////////////////////////////////////////////////
+                case 6:                                                        //
+                    System.out.print("Masukkan Judul Buku: ");              //
+                    sc.nextLine(); // buang newline                           // Modifikasi UTS Menambahkan fitur perncarian transaksi prminjaman buku berdasarkan judul buku
+                    String judul = sc.nextLine();                             //
+                    sequentialSearchUntukbukujudul(daftarPeminjaman08, judul);//
+                    break;                                                    //
+                    ////////////////////////////////////////////////////////////
                 case 0:
                     System.out.println("Terima kasih!");
                     break;
